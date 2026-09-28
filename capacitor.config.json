@@ -1,0 +1,22 @@
+{
+  "appId": "com.rash914.awaken",
+  "appName": "Awaken",
+  "webDir": "dist",
+  "android": {
+    "backgroundColor": "#04060d",
+    "allowMixedContent": false
+  },
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "LocalNotifications": {
+      "smallIcon": "ic_stat_awaken",
+      "iconColor": "#4cc9ff"
+    },
+    "SystemBars": {
+      "style": "DARK",
+      "initialViewportFitValueHint": "cover"
+    }
+  }
+}

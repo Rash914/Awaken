@@ -1,0 +1,22 @@
+// Titles. `test(ctx)` gets { state, progress, streak, best, stageUps, programDone }.
+export const ACHIEVEMENTS = [
+  { id: 'awakened', title: 'The Awakened', desc: 'Accept the System and finish the assessment.', test: (c) => c.state.profile.awakened },
+  { id: 'first-quest', title: 'First Step', desc: 'Clear your first Daily Quest.', test: (c) => c.progress.questsDone >= 1 },
+  { id: 'streak-3', title: 'Momentum', desc: '3-day quest streak.', test: (c) => c.best >= 3 },
+  { id: 'streak-7', title: 'Iron Will', desc: '7-day quest streak.', test: (c) => c.best >= 7 },
+  { id: 'streak-30', title: 'Unbreakable', desc: '30-day quest streak.', test: (c) => c.best >= 30 },
+  { id: 'survivor', title: 'Penalty Survivor', desc: 'Clear a Penalty Quest.', test: (c) => c.progress.penaltiesCleared >= 1 },
+  { id: 'class-up', title: 'Class Advancement', desc: 'Advance any exercise to a harder stage.', test: (c) => c.stageUps >= 1 },
+  { id: 'push-1000', title: 'Thousand Palms', desc: '1,000 lifetime push-ups.', test: (c) => c.progress.reps.pushup >= 1000 },
+  { id: 'squat-1000', title: 'Stone Pillar', desc: '1,000 lifetime squats.', test: (c) => c.progress.reps.squat >= 1000 },
+  { id: 'crunch-1000', title: 'Iron Core', desc: '1,000 lifetime crunches.', test: (c) => c.progress.reps.crunch >= 1000 },
+  { id: 'striker', title: 'Striker', desc: '60 minutes of boxing + Muay Thai.', test: (c) => c.progress.secs.boxing + c.progress.secs.muaythai >= 3600 },
+  { id: 'blade', title: 'Blade Dancer', desc: '30 minutes of knife drills.', test: (c) => c.progress.secs.knife >= 1800 },
+  { id: 'staff', title: 'Staff Sage', desc: '30 minutes of stick drills.', test: (c) => c.progress.secs.stick >= 1800 },
+  { id: 'rank-d', title: 'D-Rank Hunter', desc: 'Reach level 6.', test: (c) => c.progress.level >= 6 },
+  { id: 'rank-c', title: 'C-Rank Hunter', desc: 'Reach level 13.', test: (c) => c.progress.level >= 13 },
+  { id: 'rank-b', title: 'B-Rank Hunter', desc: 'Reach level 21.', test: (c) => c.progress.level >= 21 },
+  { id: 'rank-a', title: 'A-Rank Hunter', desc: 'Reach level 31.', test: (c) => c.progress.level >= 31 },
+  { id: 'rank-s', title: 'S-Rank Hunter', desc: 'Reach level 41.', test: (c) => c.progress.level >= 41 },
+  { id: 'program', title: 'Program Cleared', desc: 'Finish a full 30/60/90-day program.', test: (c) => c.programDone },
+];
