@@ -1,5 +1,7 @@
 # Awaken - Hunter Training System
 
+**Live PWA:** https://rash914.github.io/Awaken/ (open on your phone and use *Add to Home screen*)
+
 A "System"-style self-development app (PWA + Android). Every day the System issues a **Daily Quest** of at most **10 minutes**: boxing, Muay Thai, knife (Kali) and rod/stick (Arnis) drills with voice callouts, plus push-ups, squats and crunches that level up. Clear quests to gain EXP, raise stats and climb from **E-Rank to S-Rank**. Miss one and a **Penalty Quest** (+20% reps) arrives the next day.
 
 ## Features
@@ -40,7 +42,7 @@ npm run android:release  # signed AAB + APK (needs android/keystore.properties)
 ```
 
 ## Publishing
-- **PWA**: deploy `dist/` to any static HTTPS host (GitHub Pages, Netlify, Cloudflare Pages).
+- **PWA**: every push to `main` runs the tests and deploys `dist/` to GitHub Pages (`.github/workflows/pages.yml`).
 - **Play Store**: create an upload keystore, then add `android/keystore.properties` (storeFile, storePassword, keyAlias, keyPassword). Run `npm run android:release`, then upload `android/app/build/outputs/bundle/release/app-release.aab`. Bump `versionCode`/`versionName` in `android/app/build.gradle` and `APP.version` in `src/js/config.js` for every release.
 - Play listing notes: category Health & Fitness. Data safety: no data collected (everything stays on the device). Notifications are only used for the optional daily reminder.
 
